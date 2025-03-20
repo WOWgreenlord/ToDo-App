@@ -3,32 +3,25 @@ let buttons = {
   add: document.querySelector(".container__button_add_task"),
   done: document.querySelector(".container__button_done_task"),
 };
-// let checkbox = document.querySelector(".task__container_checkbox");
 let checkboxes = document.querySelectorAll(".task__container_checkbox");
-let task = document.querySelector(".task__container");
-// buttons.remove.addEventListener("click", removeTask);
-// function removeTask() {
-//   for (let i = 0; i <= checkboxes.length; i++) {
-//     if (checkboxes[i].checked) {
-//       checkboxes[i].classList.add('checked');
-//     }
-//   }
+let checkbox = document.querySelector(".task__container_checkbox");
+let containers = document.querySelectorAll(".task__container");
+// for (container of containers) {
+//   container.addEventListener("click", () => {
+//     if (checkbox.checked == false) {
+//       checkbox.checked = true;
+//     } else checkbox.checked = false;
+//   });
 // }
-// buttons.remove.addEventListener('click', () => {
-//   console.log('minus');
-// })
-buttons.remove.addEventListener('click', removeTask);
+buttons.remove.addEventListener("click", removeTask);
 function removeTask() {
-  for(let i = 0; i <= checkboxes.length; i++) {
-    if(checkboxes[i].checked) {
-      checkboxes[i].parentElement.classList.add('removeTask');
-      let delTask = document.querySelector('.removeTask');
-      console.log(checkboxes.length);
-      delTask.remove();
-      return;
-      // console.log(checkboxes[i].outerHTML);
-      // task.classList.add('forRemove');
+  for (checkbox of checkboxes) {
+    if (checkbox.checked) {
+      checkbox.parentElement.classList.add("removeTask");
+      let delTasks = document.querySelectorAll(".removeTask");
+      for (task of delTasks) {
+        task.remove();
+      }
     }
   }
 }
-// console.log(checkboxes.length);
