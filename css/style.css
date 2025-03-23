@@ -3,6 +3,9 @@
   /* background-color: black; */
   color: tomato;
 }
+/* body {
+  position: absolute;
+} */
 .task__container {
   width: 900px;
   border: 1px solid grey;
@@ -37,4 +40,22 @@
   justify-content: center;
   cursor: pointer;
   border: none;
+}
+.container__modal {
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  top: 40vh;
+  margin-inline: auto; 
+  width: 500px;
+  height: 200px;
+  background-color: aquamarine;
+}
+.modal__header {
+  text-align: center;
+}
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

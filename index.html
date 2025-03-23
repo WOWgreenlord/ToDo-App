@@ -13,6 +13,21 @@
     <title>ToDo list</title>
   </head>
   <body>
+    <div class="container__modal">
+      <div class="modal">
+        <h2 class="modal__header">New Task</h2>
+        <div class="modal__content">
+          <label for="name">
+            Name:
+            <input type="text" name="name" />
+          </label>
+          <label for="description">
+            Description:
+            <input type="text" name="description" />
+          </label>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <h1>Список дел</h1>
       <div class="container__buttons">
@@ -109,30 +124,34 @@
           </svg>
         </button>
       </div>
-      <div class="task__container">
+      <label class="task__container">
         <h2 class="task__container_name">Сходить в магазин</h2>
         <p class="task__container_description">
           Необходимо купить продуктов на неделю
         </p>
         <p class="task__container_date_create">Дата создания задания</p>
-        <input type="checkbox" class="task__container_checkbox" name="1" />
-      </div>
-      <div class="task__container">
+        <input
+          type="checkbox"
+          class="task__container_checkbox"
+          name="1"
+          id="checkboxLabel"
+        />
+      </label>
+      <label class="task__container">
         <h2 class="task__container_name">Выпить пива</h2>
         <p class="task__container_description">Эта таска не требует описания</p>
         <p class="task__container_date_create">Дата создания задания</p>
         <input type="checkbox" class="task__container_checkbox" name="2" />
-      </div>
-      <div class="task__container">
+      </label>
+      <label class="task__container">
         <h2 class="task__container_name">Lorem ipsum</h2>
         <p class="task__container_description">
           Lorem ipsum dolor sit amet consectetur adipisicing elitm
         </p>
         <p class="task__container_date_create">Дата создания задания</p>
         <input type="checkbox" class="task__container_checkbox" name="3" />
-      </div>
+      </label>
     </div>
-
     <script src="js/main.js"></script>
   </body>
 </html>

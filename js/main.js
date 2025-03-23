@@ -5,14 +5,7 @@ let buttons = {
 };
 let checkboxes = document.querySelectorAll(".task__container_checkbox");
 let checkbox = document.querySelector(".task__container_checkbox");
-let containers = document.querySelectorAll(".task__container");
-// for (container of containers) {
-//   container.addEventListener("click", () => {
-//     if (checkbox.checked == false) {
-//       checkbox.checked = true;
-//     } else checkbox.checked = false;
-//   });
-// }
+
 buttons.remove.addEventListener("click", removeTask);
 function removeTask() {
   for (checkbox of checkboxes) {
@@ -24,4 +17,8 @@ function removeTask() {
       }
     }
   }
+}
+function addTask() {
+  let modal = document.createElement('div');
+  modal.innerHTML = '<h1></h1>';
 }
