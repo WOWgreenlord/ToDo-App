@@ -16,6 +16,20 @@
     <div class="container__modal">
       <div class="modal">
         <h2 class="modal__header">New Task</h2>
+        <button class="modal__close_btn" onclick="closeModal()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="25"
+            height="25"
+            viewBox="0 0 50 50"
+          >
+            <path
+              d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"
+            ></path>
+          </svg>
+        </button>
         <div class="modal__content">
           <label for="name">
             Name:
@@ -25,13 +39,14 @@
             Description:
             <input type="text" name="description" />
           </label>
+          <button class="modal__content_btn">Add</button>
         </div>
       </div>
     </div>
     <div class="container">
       <h1>Список дел</h1>
       <div class="container__buttons">
-        <button class="container__button_add_task">
+        <button class="container__button_add_task" onclick="openModal()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"

@@ -5,6 +5,7 @@ let buttons = {
 };
 let checkboxes = document.querySelectorAll(".task__container_checkbox");
 let checkbox = document.querySelector(".task__container_checkbox");
+let modal = document.querySelector(".container__modal");
 
 buttons.remove.addEventListener("click", removeTask);
 function removeTask() {
@@ -18,7 +19,11 @@ function removeTask() {
     }
   }
 }
-function addTask() {
-  let modal = document.createElement('div');
-  modal.innerHTML = '<h1></h1>';
+function openModal() {
+  modal.style.display = "block";
 }
+function closeModal() {
+  modal.style.display = "none";
+}
+// let modal = document.createElement('div');
+// modal.innerHTML = '<h1></h1>';
