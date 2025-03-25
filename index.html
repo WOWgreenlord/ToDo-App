@@ -33,11 +33,15 @@
         <div class="modal__content">
           <label for="name">
             Name:
-            <input type="text" name="name" />
+            <input type="text" name="name" class="modal__content_name" />
           </label>
           <label for="description">
             Description:
-            <input type="text" name="description" />
+            <input
+              type="text"
+              name="description"
+              class="modal__content_description"
+            />
           </label>
           <button class="modal__content_btn">Add</button>
         </div>
@@ -149,10 +153,9 @@
           type="checkbox"
           class="task__container_checkbox"
           name="1"
-          id="checkboxLabel"
         />
       </label>
-      <label class="task__container">
+      <!-- <label class="task__container">
         <h2 class="task__container_name">Выпить пива</h2>
         <p class="task__container_description">Эта таска не требует описания</p>
         <p class="task__container_date_create">Дата создания задания</p>
@@ -165,7 +168,7 @@
         </p>
         <p class="task__container_date_create">Дата создания задания</p>
         <input type="checkbox" class="task__container_checkbox" name="3" />
-      </label>
+      </label> -->
     </div>
     <script src="js/main.js"></script>
   </body>

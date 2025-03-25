@@ -3,6 +3,14 @@
   /* background-color: black; */
   color: tomato;
 }
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container h1 {
+  text-align: center;
+}
 .task__container {
   width: 900px;
   border: 1px solid grey;
@@ -13,7 +21,8 @@
 }
 .container__buttons {
   display: flex;
-  width: 200px;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
   margin: 10px;
 }
