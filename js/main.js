@@ -13,12 +13,6 @@ let container = document.querySelector(".container");
 let checkboxes = container.getElementsByClassName("task__container_checkbox");
 let checkbox = document.querySelector(".task__container_checkbox");
 let modal = document.querySelector(".container__modal");
-let date = new Date();
-let year = date.getUTCFullYear();
-let month = date.getUTCMonth() + 1;
-let day = date.getUTCDate();
-let hours = date.getHours();
-let mins = date.getMinutes();
 buttons.remove.addEventListener("click", removeTask);
 function removeTask() {
   // Создаем массив из отмеченных задач (чтобы не работать с "живой" коллекцией)
@@ -34,17 +28,20 @@ function addTask() {
     alert("Type name and description of task");
     return;
   }
+  let date = new Date();
+  let year = date.getUTCFullYear();
+  let month = date.getUTCMonth() + 1;
+  let day = date.getUTCDate();
+  let hours = date.getHours();
+  let mins = date.getMinutes();
+
+  // Форматируем дату и время (добавляем ведущий ноль, если нужно)
+  const formattedMins = mins < 10 ? `0${mins}` : mins;
+  const formattedMonth = month < 10 ? `0${month}` : month;
+
   let label = document.createElement("label");
   label.classList.add("task__container");
-  label.innerHTML = `<h2 class="task__container_name">${
-    addTaskModal.name.value
-  }</h2><p class="task__container_description">${
-    addTaskModal.description.value
-  }</p><p class="task__container_date_create">${hours}:${
-    mins < 10 ? (mins = "0" + mins) : mins
-  } ${day}.${
-    month <= 10 ? (month = "0" + month) : month
-  }.${year}</p><input type="checkbox" class="task__container_checkbox"/>`;
+  label.innerHTML = `<h2 class="task__container_name">${addTaskModal.name.value}</h2><p class="task__container_description">${addTaskModal.description.value}</p><p class="task__container_date_create">${hours}:${formattedMins} ${day}.${formattedMonth}.${year}</p><input type="checkbox" class="task__container_checkbox"/>`;
   container.append(label);
   addTaskModal.name.value = null;
   addTaskModal.description.value = null;

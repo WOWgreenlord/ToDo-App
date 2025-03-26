@@ -1,23 +1,40 @@
 * {
   font-family: "Noto Serif Ahom", serif;
   /* background-color: black; */
-  color: tomato;
+  color: #ff6347;
+  box-sizing: border-box;
 }
 body {
   display: flex;
   align-items: center;
+  height: 90vh;
   justify-content: center;
+  background-color: #ffb0a3;
+}
+.container {
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  border-radius: 10%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 .container h1 {
   text-align: center;
 }
+.tasks__container {
+  height: 100%;
+}
 .task__container {
-  width: 900px;
+  width: 450px;
   border: 1px solid grey;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 10px;
 }
 .container__buttons {
   display: flex;
@@ -32,7 +49,12 @@ body {
   justify-content: center;
   cursor: pointer;
   border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   background-color: transparent;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
 }
 .container__button_remove_task {
   display: flex;
@@ -40,7 +62,12 @@ body {
   justify-content: center;
   cursor: pointer;
   border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   background-color: transparent;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
 }
 .container__button_done_task {
   display: flex;
@@ -49,6 +76,16 @@ body {
   cursor: pointer;
   border: none;
   background-color: transparent;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
+}
+.container__button_add_task:hover, .container__button_remove_task:hover, .container__button_done_task:hover {
+  transition: all 0.9s;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 .container__modal {
   display: none;
@@ -57,8 +94,8 @@ body {
   top: 0;
   left: 0;
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   z-index: 1;
 }
