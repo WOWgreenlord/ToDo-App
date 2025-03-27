@@ -10,6 +10,7 @@ let addTaskModal = {
 };
 // let checkboxes = document.querySelectorAll(".task__container_checkbox");
 let container = document.querySelector(".container");
+let tasksContainer = document.querySelector('.tasks__container');
 let checkboxes = container.getElementsByClassName("task__container_checkbox");
 let checkbox = document.querySelector(".task__container_checkbox");
 let modal = document.querySelector(".container__modal");
@@ -42,7 +43,7 @@ function addTask() {
   let label = document.createElement("label");
   label.classList.add("task__container");
   label.innerHTML = `<h2 class="task__container_name">${addTaskModal.name.value}</h2><p class="task__container_description">${addTaskModal.description.value}</p><p class="task__container_date_create">${hours}:${formattedMins} ${day}.${formattedMonth}.${year}</p><input type="checkbox" class="task__container_checkbox"/>`;
-  container.append(label);
+  tasksContainer.append(label);
   addTaskModal.name.value = null;
   addTaskModal.description.value = null;
   console.log(checkboxes);
