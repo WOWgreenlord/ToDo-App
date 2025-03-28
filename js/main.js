@@ -6,11 +6,10 @@ let buttons = {
 };
 let addTaskModal = {
   name: document.querySelector(".modal__content_name"),
-  description: document.querySelector(".modal__content_description"),
 };
 // let checkboxes = document.querySelectorAll(".task__container_checkbox");
 let container = document.querySelector(".container");
-let tasksContainer = document.querySelector('.tasks__container');
+let tasksContainer = document.querySelector(".tasks__container");
 let checkboxes = container.getElementsByClassName("task__container_checkbox");
 let checkbox = document.querySelector(".task__container_checkbox");
 let modal = document.querySelector(".container__modal");
@@ -25,10 +24,16 @@ function removeTask() {
 }
 buttons.modalAdd.addEventListener("click", addTask);
 function addTask() {
-  if (addTaskModal.name.value == 0 || addTaskModal.description.value == 0) {
-    alert("Type name and description of task");
+  if (addTaskModal.name.value == 0) {
+    alert("Type name of task");
+    return;
+  } 
+  else if (addTaskModal.name.value.length >= 24) {
+    alert("Name is too big");
     return;
   }
+  
+
   let date = new Date();
   let year = date.getUTCFullYear();
   let month = date.getUTCMonth() + 1;
@@ -39,16 +44,18 @@ function addTask() {
   // Форматируем дату и время (добавляем ведущий ноль, если нужно)
   const formattedMins = mins < 10 ? `0${mins}` : mins;
   const formattedMonth = month < 10 ? `0${month}` : month;
-
+  // addTaskModal.name.value
   let label = document.createElement("label");
   label.classList.add("task__container");
-  label.innerHTML = `<h2 class="task__container_name">${addTaskModal.name.value}</h2><p class="task__container_description">${addTaskModal.description.value}</p><p class="task__container_date_create">${hours}:${formattedMins} ${day}.${formattedMonth}.${year}</p><input type="checkbox" class="task__container_checkbox"/>`;
+  label.innerHTML = `<h2 class="task__container_name">${capitalize(
+    addTaskModal.name.value
+  )}</h2><p class="task__container_date_create">${hours}:${formattedMins} ${day}.${formattedMonth}.${year}</p><input type="checkbox" class="task__container_checkbox"/>`;
   tasksContainer.append(label);
   addTaskModal.name.value = null;
-  addTaskModal.description.value = null;
-  console.log(checkboxes);
-  console.log(checkboxes.length);
   closeModal();
+}
+function capitalize(string) {
+  return string && String(string[0]).toUpperCase() + String(string).slice(1);
 }
 function openModal() {
   modal.style.display = "block";
@@ -56,3 +63,6 @@ function openModal() {
 function closeModal() {
   modal.style.display = "none";
 }
+
+localStorage.setItem("test", 1);
+delete localStorage.test;

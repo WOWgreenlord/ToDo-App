@@ -24,12 +24,11 @@ body {
   text-align: center;
 }
 .tasks__container {
-  height: 100%;
+  height: 64%;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  box-sizing: border-box;
-  /* overflow-y: scroll; */
+  overflow-y: auto;
 }
 .task__container {
   width: 450px;
@@ -40,6 +39,16 @@ body {
   align-items: center;
   justify-content: space-around;
   cursor: pointer;
+  margin-right: 10px;
+}
+.task__container_name {
+  width: 10em;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.task__container_date_create {
+  font-size: 0.9rem;
 }
 .container__buttons {
   display: flex;
@@ -74,24 +83,10 @@ body {
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.5s;
 }
-.container__button_done_task {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s;
-}
 .container__button_add_task:hover,
-.container__button_remove_task:hover,
-.container__button_done_task:hover {
+.container__button_remove_task:hover {
   transition: all 0.9s;
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 .container__modal {
@@ -101,8 +96,7 @@ body {
   top: 0;
   left: 0;
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   z-index: 1;
 }
@@ -125,7 +119,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  margin: 15px;
+  margin: 1em;
   outline: none;
   border: none;
   background-color: transparent;
@@ -133,6 +127,8 @@ body {
   display: flex;
   align-items: center;
   height: 40px;
+  transition: all 0.5s;
+  border-radius: 50%;
 }
 .modal__close_btn:hover {
   border-radius: 50%;
@@ -143,10 +139,46 @@ body {
   flex-direction: column;
   gap: 10px;
 }
+.modal__content_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.visually-hidden {
+  display: none;
+}
 .modal__content_btn {
-  width: 50%;
+  width: 5em;
+  height: 3em;
   margin: 0 auto;
   cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 1em;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
+  font-size: inherit;
+  border: 2px solid #b34432;
+  background-color: white;
+}
+.modal__content_btn:hover {
+  transition: all 0.9s;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.modal__content_name {
+  outline: none;
+  border: none;
+  border-radius: 1em;
+  height: 3em;
+  width: 30em;
+  margin: 0 auto;
+  font-size: 1em;
+  border: 2px solid #b34432;
+}
+.modal__content_name::placeholder {
+  color: tomato;
+  font-size: inherit;
 }
 .task__container_checkbox {
   -webkit-appearance: none;
@@ -175,4 +207,20 @@ body {
 }
 .task__container_checkbox:checked::before {
   transform: scale(1);
+}
+.tasks__container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.tasks__container::-webkit-scrollbar {
+  width: 12px;
+  background-color: white;
+}
+.tasks__container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #b34432;
 }

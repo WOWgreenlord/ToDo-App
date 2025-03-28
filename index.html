@@ -31,18 +31,10 @@
           </svg>
         </button>
         <div class="modal__content">
-          <label for="name">
-            Name:
-            <input type="text" name="name" class="modal__content_name" />
-          </label>
-          <label for="description">
-            Description:
-            <input
-              type="text"
-              name="description"
-              class="modal__content_description"
-            />
-          </label>
+          <div class="modal__content_container">
+            <label for="name" class="visually-hidden">Name:</label>
+            <input type="text" name="name" placeholder="Name" class="modal__content_name" />
+          </div>
           <button class="modal__content_btn">Add</button>
         </div>
       </div>
@@ -130,14 +122,11 @@
         </button>
       </div>
       <div class="tasks__container">
-        <!-- <label class="task__container">
+        <label class="task__container">
           <h2 class="task__container_name">Shopping</h2>
-          <p class="task__container_description">
-          Need to but groceries
-        </p>
           <p class="task__container_date_create">Date created</p>
           <input type="checkbox" class="task__container_checkbox" />
-        </label> -->
+        </label>
       </div>
     </div>
     <script src="js/main.js"></script>
