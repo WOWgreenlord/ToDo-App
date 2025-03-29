@@ -30,7 +30,7 @@ function removeTask() {
   // Получаем массив ID отмеченных задач
   const idsToRemove = Array.from(checkboxes)
     .filter((checkbox) => checkbox.checked)
-    .mape((checkbox) => parseInt(checkbox.dataset.id));
+    .map((checkbox) => parseInt(checkbox.dataset.id));
   // Удаляем задачи из массива
   tasks = tasks.filter((task) => !idsToRemove.includes(task.id));
   saveTasks();
